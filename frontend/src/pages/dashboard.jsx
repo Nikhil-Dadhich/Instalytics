@@ -32,7 +32,7 @@ const Dashboard = () => {
   const { username } = useParams();
   const navigate = useNavigate();
   const [searchUsername, setSearchUsername] = useState("");
-  const [selectedMetric, setSelectedMetric] = useState('both');
+  const [selectedMetric, setSelectedMetric] = useState('likes');
 
   const { data: profileData, isLoading, error } = useProfile(username);
 
@@ -322,16 +322,6 @@ const Dashboard = () => {
             }`}
           >
             Comments
-          </button>
-          <button
-            onClick={() => setSelectedMetric('both')}
-            className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
-              selectedMetric === 'both'
-                ? 'bg-purple-500 text-white'
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-            }`}
-          >
-            Both
           </button>
         </div>
       </div>
